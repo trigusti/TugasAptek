@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Brand Guidelines — Tri Gusti Fachrizal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --yellow:#FFE033;
+    --coral:#FF5240;
+    --sky:#0AF5F5;
+    --ink:#0D0D0D;
+    --soft:#F5F4EE;
+    --muted:#888;
+    --font:'Plus Jakarta Sans',sans-serif;
+  }
+  body{font-family:var(--font);background:var(--soft);color:var(--ink);line-height:1.5;}
+
+  /* NAV */
+  nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:1.5rem 4rem;
+    background:var(--ink);color:#fff;
+  }
+  .nav-logo{font-size:1rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;}
+  .nav-label{font-size:.75rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;opacity:.5;}
+
+  /* HERO */
+  .hero{
+    background:var(--yellow);
+    padding:6rem 4rem 5rem;
+    position:relative;overflow:hidden;
+  }
+  .hero-eyebrow{
+    font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+    color:rgba(0,0,0,.45);margin-bottom:1.5rem;
+  }
+  .hero-name{
+    font-size:clamp(3rem,8vw,7rem);
+    font-weight:800;line-height:.95;letter-spacing:-.03em;
+    color:var(--ink);
+  }
+  .hero-name span{color:var(--coral);}
+  .hero-sub{
+    margin-top:2rem;font-size:1rem;font-weight:500;
+    color:rgba(0,0,0,.55);max-width:38ch;
+  }
+  .hero-monogram{
+    position:absolute;right:4rem;top:50%;transform:translateY(-50%);
+    font-size:clamp(6rem,18vw,14rem);font-weight:800;
+    color:rgba(0,0,0,.08);letter-spacing:-.05em;line-height:1;
+    pointer-events:none;user-select:none;
+  }
+  .hero-badge{
+    display:inline-block;margin-top:2.5rem;
+    background:var(--ink);color:var(--yellow);
+    font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+    padding:.45rem 1rem;border-radius:2rem;
+  }
+
+  /* SECTIONS */
+  section{padding:5rem 4rem;}
+  .section-label{
+    font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:1rem;
+  }
+  .section-title{
+    font-size:clamp(1.5rem,3vw,2.5rem);font-weight:800;
+    letter-spacing:-.02em;line-height:1.1;margin-bottom:3rem;
+  }
+
+  /* DIVIDER */
+  .divider{height:1px;background:rgba(0,0,0,.12);margin:0 4rem;}
+
+  /* LOGO SECTION */
+  .logo-section{background:#fff;}
+  .logo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;}
+  .logo-card{
+    border:1.5px solid rgba(0,0,0,.08);border-radius:16px;
+    padding:2.5rem;display:flex;flex-direction:column;
+    align-items:center;gap:1.25rem;
+  }
+  .logo-card.dark-bg{background:var(--ink);}
+  .logo-card.yellow-bg{background:var(--yellow);}
+  .logo-mark{
+    font-size:3.5rem;font-weight:800;letter-spacing:-.04em;line-height:1;
+  }
+  .logo-full{font-size:1rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;}
+  .logo-caption{font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+  .logo-card.dark-bg .logo-mark,.logo-card.dark-bg .logo-full{color:#fff;}
+  .logo-card.dark-bg .logo-caption{color:rgba(255,255,255,.4);}
+  .logo-card.yellow-bg .logo-mark,.logo-card.yellow-bg .logo-full{color:var(--ink);}
+  .logo-card.yellow-bg .logo-caption{color:rgba(0,0,0,.45);}
+  .accent-dot{color:var(--coral);}
+
+  /* COLOR SECTION */
+  .color-section{background:var(--ink);color:#fff;}
+  .color-section .section-label{color:rgba(255,255,255,.35);}
+  .color-section .section-title{color:#fff;}
+  .palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.25rem;}
+  .swatch{border-radius:12px;overflow:hidden;}
+  .swatch-block{height:120px;width:100%;}
+  .swatch-info{padding:1rem 1rem .9rem;background:rgba(255,255,255,.06);}
+  .swatch-name{font-size:.85rem;font-weight:700;}
+  .swatch-hex{font-size:.75rem;font-weight:500;opacity:.5;margin-top:.2rem;letter-spacing:.05em;}
+  .swatch-role{font-size:.7rem;font-weight:500;opacity:.35;margin-top:.25rem;letter-spacing:.1em;text-transform:uppercase;}
+  .usage-row{
+    display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:2.5rem;
+  }
+  .usage-pill{
+    display:flex;align-items:center;gap:.6rem;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.1);
+    padding:.5rem 1rem;border-radius:2rem;font-size:.78rem;font-weight:500;
+  }
+  .usage-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+
+  /* TYPOGRAPHY SECTION */
+  .type-section{background:var(--soft);}
+  .type-specimen{
+    border:1.5px solid rgba(0,0,0,.1);border-radius:16px;
+    padding:3rem;background:#fff;margin-bottom:1.5rem;
+  }
+  .type-scale{display:flex;flex-direction:column;gap:1.5rem;}
+  .type-row{display:flex;align-items:baseline;gap:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(0,0,0,.07);}
+  .type-row:last-child{border-bottom:none;padding-bottom:0;}
+  .type-meta{min-width:120px;font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+  .type-example{flex:1;}
+  .t-display{font-size:3.5rem;font-weight:800;letter-spacing:-.04em;line-height:1;}
+  .t-h1{font-size:2rem;font-weight:800;letter-spacing:-.02em;}
+  .t-h2{font-size:1.4rem;font-weight:700;}
+  .t-h3{font-size:1.1rem;font-weight:600;}
+  .t-body{font-size:1rem;font-weight:400;line-height:1.65;}
+  .t-small{font-size:.8rem;font-weight:500;letter-spacing:.05em;}
+  .t-label{font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
+
+  .font-info{
+    display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:1.5rem;
+  }
+  .font-card{
+    background:#fff;border:1.5px solid rgba(0,0,0,.08);
+    border-radius:12px;padding:1.5rem;
+  }
+  .font-name{font-size:1.25rem;font-weight:800;letter-spacing:-.01em;}
+  .font-desc{font-size:.78rem;color:var(--muted);margin-top:.3rem;font-weight:500;}
+  .weights-row{display:flex;gap:.75rem;margin-top:1rem;flex-wrap:wrap;}
+  .weight-chip{
+    font-size:.78rem;padding:.3rem .75rem;
+    border-radius:2rem;background:var(--soft);
+    border:1px solid rgba(0,0,0,.1);
+  }
+
+  /* SPACING */
+  .spacing-section{background:var(--coral);color:#fff;}
+  .spacing-section .section-label{color:rgba(255,255,255,.5);}
+  .spacing-section .section-title{color:#fff;}
+  .spacing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:1.25rem;}
+  .space-card{background:rgba(255,255,255,.12);border-radius:10px;padding:1rem;text-align:center;}
+  .space-bar{background:#fff;border-radius:4px;margin:0 auto .75rem;}
+  .space-val{font-size:1.1rem;font-weight:800;}
+  .space-label{font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.6;margin-top:.2rem;}
+
+  /* VOICE */
+  .voice-section{background:#fff;}
+  .voice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;}
+  .voice-card{
+    border-left:4px solid var(--yellow);
+    padding:1.25rem 1.25rem 1.25rem 1.5rem;
+    background:var(--soft);border-radius:0 12px 12px 0;
+  }
+  .voice-card.coral{border-left-color:var(--coral);}
+  .voice-card.sky{border-left-color:var(--sky);}
+  .voice-title{font-size:.85rem;font-weight:700;margin-bottom:.5rem;}
+  .voice-text{font-size:.82rem;color:var(--muted);line-height:1.55;}
+
+  /* DONT-DO */
+  .rules-section{background:var(--soft);}
+  .rules-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+  .rule-card{border-radius:16px;padding:2rem;}
+  .rule-card.do{background:#E7F8EE;border:1.5px solid #9BE8B9;}
+  .rule-card.dont{background:#FDEAEA;border:1.5px solid #F7BBBB;}
+  .rule-header{
+    font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+    margin-bottom:1rem;
+  }
+  .rule-card.do .rule-header{color:#1B8A4C;}
+  .rule-card.dont .rule-header{color:#C0392B;}
+  .rule-list{list-style:none;display:flex;flex-direction:column;gap:.7rem;}
+  .rule-list li{font-size:.88rem;display:flex;align-items:flex-start;gap:.6rem;}
+  .rule-list li::before{
+    content:'';display:inline-block;
+    width:14px;height:14px;flex-shrink:0;margin-top:.1rem;border-radius:50%;
+  }
+  .rule-card.do .rule-list li::before{background:#1B8A4C;}
+  .rule-card.dont .rule-list li::before{background:#C0392B;}
+
+  /* FOOTER */
+  footer{
+    background:var(--ink);color:rgba(255,255,255,.35);
+    padding:3rem 4rem;
+    display:flex;justify-content:space-between;align-items:center;
+    flex-wrap:wrap;gap:1rem;
+  }
+  footer .footer-name{font-weight:700;font-size:.85rem;color:rgba(255,255,255,.7);letter-spacing:.05em;}
+  footer .footer-version{font-size:.72rem;letter-spacing:.1em;}
+
+  @media(max-width:640px){
+    nav,section,.hero,footer,.divider{padding-left:1.5rem;padding-right:1.5rem;}
+    .divider{margin:0 1.5rem;}
+    .hero-monogram{display:none;}
+    .rules-grid{grid-template-columns:1fr;}
+    .font-info{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">TGF — Brand Guidelines</div>
+  <div class="nav-label">v1.0 · 2025</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding-left:4rem;padding-right:4rem;">
+  <div class="hero-eyebrow">Portfolio · Brand Identity</div>
+  <h1 class="hero-name">Tri Gusti<br><span>Fachrizal</span></h1>
+  <p class="hero-sub">A visual identity system built for clarity, energy, and impact across all digital touchpoints.</p>
+  <div class="hero-badge">Brand Guidelines</div>
+  <div class="hero-monogram">TGF</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- LOGO -->
+<section class="logo-section">
+  <div class="section-label">01 — Identity</div>
+  <div class="section-title">Logo & Monogram</div>
+  <div class="logo-grid">
+    <div class="logo-card" style="background:var(--soft);">
+      <div class="logo-mark">TGF<span class="accent-dot">.</span></div>
+      <div class="logo-full">Tri Gusti Fachrizal</div>
+      <div class="logo-caption">Default — Light</div>
+    </div>
+    <div class="logo-card dark-bg">
+      <div class="logo-mark" style="color:var(--yellow);">TGF<span style="color:var(--coral);">.</span></div>
+      <div class="logo-full">Tri Gusti Fachrizal</div>
+      <div class="logo-caption">Reversed — Dark</div>
+    </div>
+    <div class="logo-card yellow-bg">
+      <div class="logo-mark">TGF<span class="accent-dot">.</span></div>
+      <div class="logo-full">Tri Gusti Fachrizal</div>
+      <div class="logo-caption">Brand — Yellow</div>
+    </div>
+    <div class="logo-card" style="background:var(--coral);">
+      <div class="logo-mark" style="color:#fff;">TGF<span style="color:var(--yellow);">.</span></div>
+      <div class="logo-full" style="color:#fff;">Tri Gusti Fachrizal</div>
+      <div class="logo-caption" style="color:rgba(255,255,255,.5);">Accent — Coral</div>
+    </div>
+  </div>
+
+  <div style="margin-top:2.5rem;padding:2rem;background:var(--soft);border-radius:16px;border:1.5px solid rgba(0,0,0,.08);">
+    <div class="section-label" style="margin-bottom:.5rem;">Clear space rule</div>
+    <p style="font-size:.88rem;color:var(--muted);max-width:55ch;line-height:1.65;">
+      Always maintain a minimum clear space equal to the height of the letter "T" around the monogram on all sides. Never place the logo on a patterned background without adequate contrast.
+    </p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- COLORS -->
+<section class="color-section">
+  <div class="section-label">02 — Palette</div>
+  <div class="section-title">Color System</div>
+  <div class="palette">
+    <div class="swatch">
+      <div class="swatch-block" style="background:#FFE033;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Energy Yellow</div>
+        <div class="swatch-hex">#FFE033</div>
+        <div class="swatch-role">Primary Brand</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#FF5240;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Vivid Coral</div>
+        <div class="swatch-hex">#FF5240</div>
+        <div class="swatch-role">Accent</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#0AF5F5;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Electric Sky</div>
+        <div class="swatch-hex">#0AF5F5</div>
+        <div class="swatch-role">Highlight</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#0D0D0D;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Deep Ink</div>
+        <div class="swatch-hex">#0D0D0D</div>
+        <div class="swatch-role">Backgrounds / Text</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#F5F4EE;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Warm Soft</div>
+        <div class="swatch-hex">#F5F4EE</div>
+        <div class="swatch-role">Page Background</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="usage-row">
+    <div class="usage-pill">
+      <span class="usage-dot" style="background:#FFE033;"></span>
+      Hero backgrounds, CTAs
+    </div>
+    <div class="usage-pill">
+      <span class="usage-dot" style="background:#FF5240;"></span>
+      Accent, hover states, highlights
+    </div>
+    <div class="usage-pill">
+      <span class="usage-dot" style="background:#0AF5F5;"></span>
+      Links, interactive elements
+    </div>
+    <div class="usage-pill">
+      <span class="usage-dot" style="background:#0D0D0D;"></span>
+      Body text, dark surfaces
+    </div>
+  </div>
+</section>
+
+<div class="divider" style="background:rgba(255,255,255,.08);margin:0;"></div>
+
+<!-- TYPOGRAPHY -->
+<section class="type-section">
+  <div class="section-label">03 — Typography</div>
+  <div class="section-title">Type Scale</div>
+
+  <div class="type-specimen">
+    <div class="type-scale">
+      <div class="type-row">
+        <div class="type-meta">Display</div>
+        <div class="type-example t-display">Portfolio.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">Heading 1</div>
+        <div class="type-example t-h1">Selected Work</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">Heading 2</div>
+        <div class="type-example t-h2">UX & Frontend Development</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">Heading 3</div>
+        <div class="type-example t-h3">Project Case Study</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">Body</div>
+        <div class="type-example t-body">I design and build digital experiences with a focus on clarity and functional beauty. Every project starts with a question: how can this be simpler?</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">Small</div>
+        <div class="type-example t-small">2025 — Ongoing Project</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">Label</div>
+        <div class="type-example t-label">Category / Tag</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="font-info">
+    <div class="font-card">
+      <div class="font-name">Plus Jakarta Sans</div>
+      <div class="font-desc">Primary typeface — all weights</div>
+      <div class="weights-row">
+        <span class="weight-chip" style="font-weight:400;">Regular 400</span>
+        <span class="weight-chip" style="font-weight:500;">Medium 500</span>
+        <span class="weight-chip" style="font-weight:600;">SemiBold 600</span>
+        <span class="weight-chip" style="font-weight:700;">Bold 700</span>
+        <span class="weight-chip" style="font-weight:800;">ExtraBold 800</span>
+      </div>
+    </div>
+    <div class="font-card">
+      <div class="font-name" style="font-family:monospace;">Monospace</div>
+      <div class="font-desc">Code, data, labels — system mono</div>
+      <div class="weights-row">
+        <span class="weight-chip" style="font-family:monospace;">Regular 400</span>
+        <span class="weight-chip" style="font-family:monospace;font-weight:700;">Bold 700</span>
+      </div>
+      <p style="font-size:.75rem;color:var(--muted);margin-top:.75rem;">Use for code snippets, technical annotations, and data-heavy UI only.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SPACING -->
+<section class="spacing-section">
+  <div class="section-label">04 — Layout</div>
+  <div class="section-title">Spacing Scale</div>
+  <div class="spacing-grid">
+    <div class="space-card">
+      <div class="space-bar" style="width:4px;height:4px;"></div>
+      <div class="space-val">4px</div>
+      <div class="space-label">XS</div>
+    </div>
+    <div class="space-card">
+      <div class="space-bar" style="width:8px;height:8px;"></div>
+      <div class="space-val">8px</div>
+      <div class="space-label">SM</div>
+    </div>
+    <div class="space-card">
+      <div class="space-bar" style="width:16px;height:16px;"></div>
+      <div class="space-val">16px</div>
+      <div class="space-label">Base</div>
+    </div>
+    <div class="space-card">
+      <div class="space-bar" style="width:24px;height:24px;"></div>
+      <div class="space-val">24px</div>
+      <div class="space-label">MD</div>
+    </div>
+    <div class="space-card">
+      <div class="space-bar" style="width:32px;height:32px;"></div>
+      <div class="space-val">32px</div>
+      <div class="space-label">LG</div>
+    </div>
+    <div class="space-card">
+      <div class="space-bar" style="width:48px;height:24px;"></div>
+      <div class="space-val">48px</div>
+      <div class="space-label">XL</div>
+    </div>
+    <div class="space-card">
+      <div class="space-bar" style="width:64px;height:24px;"></div>
+      <div class="space-val">64px</div>
+      <div class="space-label">2XL</div>
+    </div>
+    <div class="space-card">
+      <div class="space-bar" style="width:80px;height:24px;"></div>
+      <div class="space-val">80px</div>
+      <div class="space-label">3XL</div>
+    </div>
+  </div>
+  <p style="margin-top:2rem;font-size:.82rem;color:rgba(255,255,255,.55);max-width:55ch;line-height:1.6;">
+    Use 16px as the base unit. Section padding starts at 64px vertically. Max content width is <strong style="color:#fff;">1200px</strong>, always centered. Side margins are a minimum of <strong style="color:#fff;">24px</strong> on mobile.
+  </p>
+</section>
+
+<div class="divider"></div>
+
+<!-- VOICE -->
+<section class="voice-section">
+  <div class="section-label">05 — Tone & Voice</div>
+  <div class="section-title">Brand Personality</div>
+  <div class="voice-grid">
+    <div class="voice-card">
+      <div class="voice-title">Direct</div>
+      <div class="voice-text">Lead with the work. Skip filler words. Every sentence earns its place.</div>
+    </div>
+    <div class="voice-card coral">
+      <div class="voice-title">Confident</div>
+      <div class="voice-text">Own your expertise. Don't hedge or over-qualify. State things clearly.</div>
+    </div>
+    <div class="voice-card sky">
+      <div class="voice-title">Human</div>
+      <div class="voice-text">Approachable language, not corporate speak. Warm but never informal.</div>
+    </div>
+    <div class="voice-card" style="border-left-color:var(--ink);">
+      <div class="voice-title">Precise</div>
+      <div class="voice-text">Specific details beat vague adjectives. Show, don't just tell.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- DO / DON'T -->
+<section class="rules-section">
+  <div class="section-label">06 — Usage Rules</div>
+  <div class="section-title">Do & Don't</div>
+  <div class="rules-grid">
+    <div class="rule-card do">
+      <div class="rule-header">✓ Do</div>
+      <ul class="rule-list">
+        <li>Use Plus Jakarta Sans exclusively for all text</li>
+        <li>Use Energy Yellow as the dominant brand color</li>
+        <li>Keep sufficient contrast — dark text on light, light on dark</li>
+        <li>Maintain clear space around the TGF monogram</li>
+        <li>Use Coral as a highlight or CTA accent only</li>
+        <li>Keep layouts clean with generous white space</li>
+      </ul>
+    </div>
+    <div class="rule-card dont">
+      <div class="rule-header">✗ Don't</div>
+      <ul class="rule-list">
+        <li>Mix other typeface families into the design</li>
+        <li>Place the logo on busy or low-contrast backgrounds</li>
+        <li>Use all three brand colors at equal visual weight</li>
+        <li>Distort, rotate, or add effects to the monogram</li>
+        <li>Use yellow text on white — always pair with a dark surface</li>
+        <li>Overuse Electric Sky — it's an accent, not a base color</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-name">Tri Gusti Fachrizal</div>
+    <div class="footer-version">Brand Guidelines · Version 1.0 · 2025</div>
+  </div>
+  <div style="font-size:.75rem;letter-spacing:.08em;">TGF<span style="color:var(--coral);">.</span></div>
+</footer>
+
+</body>
+</html>
